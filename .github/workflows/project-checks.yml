@@ -1,0 +1,23 @@
+name: Project checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  source:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate repository layout
+        run: |
+          test -f README.md
+          test -f LICENSE
+          test -f main.c
+          test -f Makefile
+          test -d nbproject
+          test ! -d dist
+

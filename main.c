@@ -24,13 +24,13 @@
 #define LCD_ROWS  2
 #define LCD_COLS  16
 
-// Switches on RB0, RB1, RB2 (example). Adjust to your hardware.
+// Board switches used for menu, difficulty, and restart controls.
 #define SW0       PORTFbits.RF3  // Return to main menu
 #define SW1       PORTFbits.RF5  // Difficulty: 0=normal, 1=hard
 #define SW2       PORTFbits.RF4  // Restart
 #define SW3       PORTDbits.RD15  // Restart
 
-// We'll generate tones via Timer3+OC1
+// Timer3 and OC1 drive square-wave sound output.
 volatile int soundEnabled = 0;  // 1 => generate tone, 0 => silence
 
 //------------------------------------------------------------------------------
