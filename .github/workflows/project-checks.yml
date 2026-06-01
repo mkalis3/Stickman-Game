@@ -5,7 +5,7 @@ on:
   pull_request:
 
 jobs:
-  source:
+  checks:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,7 +17,20 @@ jobs:
           test -f README.md
           test -f LICENSE
           test -f main.c
+          test -f include/game_state.h
+          test -f src/game_state.c
+          test -f tests/test_game_state.c
+          test -f docs/ARCHITECTURE.md
+          test -f docs/QA.md
           test -f Makefile
           test -d nbproject
           test ! -d dist
 
+      - name: Run repository hygiene checks
+        run: python scripts/check_project.py
+
+      - name: Build and run host tests
+        run: |
+          mkdir -p build/host
+          gcc -std=c11 -Wall -Wextra -Werror -Iinclude tests/test_game_state.c src/game_state.c -o build/host/test_game_state
+          ./build/host/test_game_state

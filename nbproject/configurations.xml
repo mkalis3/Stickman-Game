@@ -4,6 +4,14 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>include/board_config.h</itemPath>
+      <itemPath>include/audio.h</itemPath>
+      <itemPath>include/board_init.h</itemPath>
+      <itemPath>include/display_assets.h</itemPath>
+      <itemPath>include/game_state.h</itemPath>
+      <itemPath>include/keypad.h</itemPath>
+      <itemPath>include/lcd_driver.h</itemPath>
+      <itemPath>include/timing.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -18,6 +26,13 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>main.c</itemPath>
+      <itemPath>src/audio.c</itemPath>
+      <itemPath>src/board_init.c</itemPath>
+      <itemPath>src/display_assets.c</itemPath>
+      <itemPath>src/game_state.c</itemPath>
+      <itemPath>src/keypad.c</itemPath>
+      <itemPath>src/lcd_driver.c</itemPath>
+      <itemPath>src/timing.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
